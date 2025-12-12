@@ -1,18 +1,19 @@
 -- Question: Create a new database role named Analyst and grant this role SELECT access on the
 -- Employee_View.
+--G1_23BCS12388_Sudhanshu_Session1
 CREATE TABLE EMPLOYEE(
 EMP_ID SERIAL PRIMARY KEY,
 EMP_NAME VARCHAR(50),
 EMP_SALARY DECIMAL(10,2)
 );
 INSERT INTO EMPLOYEE(EMP_NAME,EMP_SALARY) VALUES
-('Arjun',51000),
-('Mohit',40000),
-('Vikas',90000);
+('Sudhanshu',51000),
+('Rohit',44000),
+('Viky',95000);
+
 CREATE VIEW EMPLOYEE_VIEW
 AS
 SELECT * FROM EMPLOYEE;
 CREATE ROLE Analyst
 WITH LOGIN PASSWORD '1234';
 GRANT SELECT ON EMPLOYEE_VIEW TO Analyst;
---G1_23BCS12388_Sudhanshu_Session1
